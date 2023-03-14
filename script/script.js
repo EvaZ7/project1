@@ -1,5 +1,6 @@
 import fetchData from "../modules/api.js";
 import {renderRepositoryNames} from "../modules/render.js";
+import { onRouteChanged } from "../modules/router.js";
 
 // variables
 const deNav = document.querySelector("nav");
@@ -8,8 +9,10 @@ const menuKnop = document.querySelector("header nav>a");
 fetchData()
   .then((data) => {
     console.log(data)
-    renderRepositoryNames(data)
 
+    window.addEventListener("hashchange", (e) => {
+      onRouteChanged(data);
+    });
 })
 .catch((error) => {
     // Handle the error

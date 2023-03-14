@@ -1,14 +1,29 @@
+const main = document.querySelector("main");
+
 export function renderRepositoryNames(data) {
+    main.insertAdjacentHTML("beforeend", `<ul></ul>`);
+    let reposList = document.querySelector("main ul");
     data.forEach((repository) => {
         console.log(repository.name);
-    //     let oneauthor = quote.author;
-    //     authors.insertAdjacentHTML(
-    //       "beforeend",
-    //       `<li> <a href="#author/${quote.author.replaceAll(
-    //         " ",
-    //         "-"
-    //       )}"> <img src="./images/person.png"> <p>${oneauthor}</p> </a> </li>`
-    //     );
+        let oneRepositoryname = repository.name;
+        let oneDescription = repository.description;
+        // let cloneUrl = repository.clone_url
+        let oneHomepage = repository.homepage
+        let oneLicense;
+
+        if (repository.license == null) {
+          oneLicense = "No license";
+        } else {
+          oneLicense = repository.license.name;
+        }
+        
+        reposList.insertAdjacentHTML("beforeend", `<li> <h2>${oneRepositoryname}</h2> <p>${oneDescription}</p> <p>${oneLicense}</p> <button>Clone</button> <a href="${oneHomepage}">Homepage</a> </li>`);
       });
-    //   console.log(data);
+}
+
+export function copyText() {
+  data.forEach((repository) => {
+    let cloneUrl = repository.clone_url
+    navigator.clipboard.writeText(cloneUrl);
+  });
 }
