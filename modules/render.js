@@ -67,7 +67,7 @@ export function renderAboutme(data) {
   let avatar = data[0].owner.avatar_url;
   main.insertAdjacentHTML(
     "beforeend",
-    `<img src="./images/me.jpg"> 
+    `<img src="./images/me.JPG"> 
     <p>Ik ben Eva zoals je al hebt gelezen, 
     maar naast repositories maken doe ik nog veel meer. Ik ben heb namelijk voor deze minor ook 
     een minor Visual interface Design gevolgd. Alle projecten hiervan kan je terugvinden op mijn andere
