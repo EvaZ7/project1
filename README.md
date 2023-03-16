@@ -1,6 +1,6 @@
 # Github portfolio
 
-![Frontpage](https://github.com/EvaZ7/Quotes/blob/4b05094b8fa3c4556e8e3799aaa9f918216d75d5/readmeimg/amazed.png)
+![Frontpage](https://github.com/EvaZ7/project1/blob/0acb66c0cc566a042146327309a7c7e2b0537d71/images/home.png)
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![license: mit](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/EvaZ7/Blok-tech/blob/main/LICENSE)
