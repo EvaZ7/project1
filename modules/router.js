@@ -1,4 +1,8 @@
-import { renderProfile, renderRepositoryNames, renderAboutme } from "../modules/render.js";
+import {
+  renderProfile,
+  renderRepositoryNames,
+  renderAboutme,
+} from "../modules/render.js";
 
 const menuItemPortfolio = document.querySelector("nav ul li:first-of-type");
 const menuItemOvermij = document.querySelector("nav ul li:nth-of-type(2)");
@@ -9,22 +13,22 @@ export function onRouteChanged(data) {
 
   console.log(hash);
 
-  switch (hash) {   
+  switch (hash) {
     case "#githubportfolio":
       menuItemOvermij.classList.remove("overmij");
       menuItemPortfolio.classList.add("portfolio");
       renderRepositoryNames(data);
-    break;
+      break;
     case "#overmij":
       menuItemPortfolio.classList.remove("portfolio");
       menuItemOvermij.classList.add("overmij");
       renderAboutme(data);
 
-    break;
+      break;
     case "#home":
       menuItemPortfolio.classList.remove("portfolio");
       menuItemOvermij.classList.remove("overmij");
       renderProfile(data);
-    break;
+      break;
   }
 }

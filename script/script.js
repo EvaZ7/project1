@@ -1,28 +1,27 @@
 import fetchData from "../modules/api.js";
-import {renderProfile} from "../modules/render.js";
+import { renderProfile } from "../modules/render.js";
 import { onRouteChanged } from "../modules/router.js";
+import { errorState } from "../modules/error.js";
+import { loadingState } from "../modules/loading.js";
 
 // variables
 const deNav = document.querySelector("nav");
 const menuKnop = document.querySelector("header nav>a");
 
+loadingState();
+
 fetchData()
   .then((data) => {
-    renderProfile(data)
-    console.log(data)
+    renderProfile(data);
+    console.log(data);
 
     window.addEventListener("hashchange", (e) => {
       onRouteChanged(data);
     });
-})
-.catch((error) => {
-    // Handle the error
-    // console.log(error);
-    // loadingdaily.textContent =
-    //   "This should be working... but something's gone wrong";
-    // refreshButton.src = "images/warning.png";
-    // authorQuote.textContent = "Quote not found...";
-});
+  })
+  .catch((error) => {
+    errorState();
+  });
 
 // eventlisteners
 menuKnop.addEventListener(
@@ -31,4 +30,4 @@ menuKnop.addEventListener(
     deNav.classList.toggle("open");
   },
   false
-);      
+);
