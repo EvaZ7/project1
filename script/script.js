@@ -1,5 +1,5 @@
 import fetchData from "../modules/api.js";
-import {renderRepositoryNames} from "../modules/render.js";
+import {renderProfile} from "../modules/render.js";
 import { onRouteChanged } from "../modules/router.js";
 
 // variables
@@ -8,6 +8,7 @@ const menuKnop = document.querySelector("header nav>a");
 
 fetchData()
   .then((data) => {
+    renderProfile(data)
     console.log(data)
 
     window.addEventListener("hashchange", (e) => {
@@ -30,4 +31,4 @@ menuKnop.addEventListener(
     deNav.classList.toggle("open");
   },
   false
-);
+);      
