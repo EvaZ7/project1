@@ -209,7 +209,9 @@ nav.open span:last-of-type {
 
 /*power knop*/
 header button {
-  display: none;
+  width: 0em;
+  background: none;
+  border: none;
 }
 
 /************/
